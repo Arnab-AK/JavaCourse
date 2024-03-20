@@ -33,7 +33,41 @@ public class CodingExercises {
                 System.out.println(kilometersPerHour + " km/h = " + milesPerHour + " mi/h");
             }
         }
+    }
 
+    // Coding Exercise 3
+    public class MegaBytesConverter {
+        // write code here
+
+        public static void printMegaBytesAndKiloBytes(int kiloBytes) {
+            int megaBytes = kiloBytes / 1024;
+            int remKilobytes = kiloBytes % 1024;
+
+            if (kiloBytes > 0) {
+                System.out.println(kiloBytes + " KB = " + megaBytes + " MB and " + remKilobytes + " KB");
+            } else if (kiloBytes < 0) {
+                System.out.println("Invalid Value");
+            } else if (kiloBytes == 0) {
+                System.out.println("0 KB = 0 MB and 0 KB");
+            }
+        }
+    }
+
+    // Coding Exercise 4
+    public class BarkingDog {
+        // write code here
+
+        public static boolean shouldWakeUp (boolean barking, int hourOfDay) {
+            if (hourOfDay >= 0 && hourOfDay <= 23) {
+                if (barking == true && (hourOfDay > 22 || hourOfDay < 8)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
     }
 
 }
