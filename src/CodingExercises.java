@@ -128,4 +128,74 @@ public class CodingExercises {
             return number > 12 && number < 20;
         }
     }
+
+    // Coding Exercise 9
+    public class AreaCalculator {
+        // write code here
+
+        public static double area (double radius) {
+
+            if (radius < 0) {
+                return -1.0;
+            } else {
+                return 3.14159 * (radius * radius);
+            }
+
+        }
+
+        public static double area (double x, double y) {
+
+            if (x < 0 || y < 0) {
+                return -1.0;
+            } else {
+                return x * y;
+            }
+        }
+    }
+
+    // Coding Exercise 10
+    public class MinutesToYearsDaysCalculator {
+        // write code here
+
+        public static void printYearsAndDays(long minutes) {
+            if (minutes < 0 ){
+                System.out.println("Invalid Value");
+            } else {
+                long years = minutes / (60 * 24 * 365);
+                long remainingMinutes = minutes % (60 * 24 * 365);
+                long days = remainingMinutes / (60 * 24);
+                System.out.println(minutes + " min = " + years + " y and " + days + " d");
+            }
+        }
+    }
+
+    // Coding Exercise 11
+    public class IntEqualityPrinter {
+        // write code here
+
+        public static void printEqual(int x, int y, int z){
+            if (x < 0 || y < 0 || z < 0){
+                System.out.println("Invalid Value");
+            } else if (x == y && y == z){
+                System.out.println("All numbers are equal");
+            } else if (x != y && y != z && x != z){
+                System.out.println("All numbers are different");
+            } else {
+                System.out.println("Neither all are equal or different");
+            }
+        }
+    }
+
+    // Coding Exercise 12
+    public class PlayingCat {
+        // write code here
+
+        public static boolean isCatPlaying (boolean summer, int temperature){
+            if (summer) {
+                return temperature >= 25 && temperature <= 45;
+            } else {
+                return temperature >= 25 && temperature <= 35;
+            }
+        }
+    }
 }
