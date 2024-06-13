@@ -198,4 +198,81 @@ public class CodingExercises {
             }
         }
     }
+
+    // Coding Exercise 13
+    public class NumberInWord {
+        // write code here
+
+        public static void printNumberInWord (int number) {
+            // String theNumber = switch (number) {
+            //     case 0 -> {yield "ZERO";}
+            //     case 1 -> {yield "ONE";}
+            //     case 2 -> {yield "TWO";}
+            //     case 3 -> {yield "THREE";}
+            //     case 4 -> {yield "FOUR";}
+            //     case 5 -> {yield "FIVE";}
+            //     case 6 -> {yield "SIX";}
+            //     case 7 -> {yield "SEVEN";}
+            //     case 8 -> {yield "EIGHT";}
+            //     case 9 -> {yield "NINE";}
+            //     default -> {yield "OTHER";}
+            // };
+            // System.out.println(theNumber);
+            String numberInWord;
+            switch (number) {
+                case 0 -> numberInWord = "ZERO";
+                case 1 -> numberInWord = "ONE";
+                case 2 -> numberInWord = "TWO";
+                case 3 -> numberInWord = "THREE";
+                case 4 -> numberInWord = "FOUR";
+                case 5 -> numberInWord = "FIVE";
+                case 6 -> numberInWord = "SIX";
+                case 7 -> numberInWord = "SEVEN";
+                case 8 -> numberInWord = "EIGHT";
+                case 9 -> numberInWord = "NINE";
+                default -> numberInWord = "OTHER";
+            }
+            System.out.println(numberInWord);
+        }
+    }
+
+    // Coding Exercise 14
+    public class NumberOfDaysInMonth {
+        // write code here
+
+        public static int getDaysInMonth(int month, int year) {
+
+            if (year < 1 || year > 9_999) {
+                return -1;
+            }
+
+            return switch (month) {
+                case 1, 3, 5, 7, 8, 10, 12 -> 31;  // for any of the following months, return 31
+                case 2 -> isLeapYear(year) ? 29 : 28; // if it's February, determine if it's a leap year first, then return either 28 or 29.
+                case 4, 6, 9, 11 -> 30; // return 30 for the following months
+                default -> -1; // return -1 if the month parameter is not between 1 and 12.
+            };
+        }
+
+        public static boolean isLeapYear(int year) {
+
+            if (year < 1 || year > 9_999) {
+                return false;
+            }
+
+            if (year % 4 == 0) {
+                if (year % 100 != 0) {
+                    return true;
+                } else {
+                    if (year % 400 == 0) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            } else {
+                return false;
+            }
+        }
+    }
 }
